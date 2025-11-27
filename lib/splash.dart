@@ -15,6 +15,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 1) , () {
+      // ignore: use_build_context_synchronously
       Navigator.push(context, MaterialPageRoute(builder: (c) => Home()));
     });
     super.initState();
