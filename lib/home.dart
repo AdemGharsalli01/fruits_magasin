@@ -1,5 +1,7 @@
 //import 'dart:io';
 
+//import 'dart:io';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,9 +20,9 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   //image de profile selection
- /* XFile? selectedimage;
+  //XFile? selectedimage;
 
-  Future<void> _uploadImage() async {
+  /*Future<void> _uploadImage() async {
     final image = await ImagePicker().pickImage(source: ImageSource.gallery);
     setState(() {
       selectedimage = image;
@@ -236,7 +238,7 @@ class _HomeState extends State<Home> {
               basketselected = false;
               seeall = false;
               profile = false;
-              edit =false;
+              edit = false;
             });
           },
           child: AppBar(
@@ -440,7 +442,7 @@ class _HomeState extends State<Home> {
                 // basket
                 basketselected == false
                     ? Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Container(
                         width: double.infinity,
                         height: heightscren * 0.09,
@@ -782,7 +784,7 @@ class _HomeState extends State<Home> {
                           ),
                           Row(
                             children: [
-                              SizedBox(width: whidthscren * 0.06),
+                              SizedBox(width: whidthscren * 0.02),
                               Text(
                                 "x${product[index].quantity}",
                                 style: TextStyle(
@@ -824,7 +826,7 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               // separator
-                              SizedBox(width: whidthscren * 0.07),
+                              SizedBox(width: whidthscren * 0.055),
                               // total price
                               Text(
                                 "\$${product[index].totalprice.toStringAsFixed(2)}",
@@ -844,6 +846,7 @@ class _HomeState extends State<Home> {
                 ),
               )
               : SizedBox.shrink(),
+          // profile vieux
           profile == true
               ? Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -871,10 +874,11 @@ class _HomeState extends State<Home> {
                         // profile image
                         CircleAvatar(
                           radius: 50,
-                          /*backgroundImage: selectedimage != null
-                              ? FileImage(File(selectedimage!.path))
-                              : null,*/
-                            //backgroundColor: AssetImage(""),
+                          /*backgroundImage:
+                              selectedimage != null
+                                  ? FileImage(File(selectedimage!.path))
+                                  : null,*/
+                          //backgroundColor: AssetImage(""),
                         ),
                         // space between image and name
                         SizedBox(height: 20),
@@ -926,6 +930,7 @@ class _HomeState extends State<Home> {
                 ],
               )
               : SizedBox.shrink(),
+          //edit profile vieux
           edit == true
               ? Container(
                 width: whidthscren,
@@ -934,7 +939,9 @@ class _HomeState extends State<Home> {
                 color: Colors.black,
                 child: Column(
                   children: [
-                    /*SizedBox(height: 100),
+                    //spacer
+                    SizedBox(height: heightscren*0.05),
+                    // image selecter
                     Container(
                       height: 200,
                       width: 200,
@@ -944,18 +951,21 @@ class _HomeState extends State<Home> {
                         // ignore: deprecated_member_use
                         color: Colors.grey.withOpacity(0.4),
                       ),
-                      child:
+                     /* child:
                           selectedimage == null
                               ? null
                               : Image.file(
                                 File(selectedimage!.path),
                                 height: 200,
                                 width: 200,
-                              ),
+                              ),*/
                     ),
+                    //spacer
                     SizedBox(height: 20),
+                    //button de selection
+
                     GestureDetector(
-                      onTap: _uploadImage,
+                      //onTap: _uploadImage,
                       child: Container(
                         height: 30,
                         width: 200,
@@ -974,8 +984,27 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
+                    //spacer
                     SizedBox(height: 10),
-                    selectedimage != null
+                    // saisir de nom
+                    Row(
+                      children: [
+                        Text("Name"),
+                        Container(
+                          height:  heightscren*0.05,
+                          width: heightscren*0.05,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey)
+                          ),
+                          
+                        ),
+                      ],
+                    ),
+
+
+
+
+                    /*selectedimage != null
                         ? GestureDetector(
                           onTap: () {
                             setState(() {
@@ -1002,11 +1031,12 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                         )
-            ig            : SizedBox.shrink(),*/
-                    Text("data",style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 40,
-                    ),)
+                        : SizedBox.shrink(),*/
+                   
+                    Spacer(),
+                    Text("developed by adem gharsalli"),
+                    SizedBox(height: heightscren*0.09,)
+                  
                   ],
                 ),
               )

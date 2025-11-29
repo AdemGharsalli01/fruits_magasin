@@ -1,7 +1,7 @@
 name: fruit
 description: "A new Flutter project."
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
 
 
 version: 1.0.0+1
@@ -13,8 +13,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  #image_picker: ^1.2.0
-  #file_picker: ^10.1.9
+  #image_picker: ^1.2.1
+  #file_picker: ^10.3.7
 
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.0.17
